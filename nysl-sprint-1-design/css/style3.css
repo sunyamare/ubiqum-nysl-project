@@ -10,10 +10,10 @@ body {
 }
 
 header {
-    background: url("../img/design2_image1.jpg") bottom center no-repeat;;
+    background: url("../img/Youth-Soccer.jpg") bottom center no-repeat;;
     background-size: cover;
     height: 461px;
-    max-height: 230px;
+    max-height: 400px;
 }
 
 .pageTitle {

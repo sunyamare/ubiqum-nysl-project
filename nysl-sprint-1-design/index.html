@@ -6,43 +6,64 @@
 <meta name="author" content="Thomas">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link id="pageStyle" rel="stylesheet" type="text/css" href="css/style1.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    /* get hash from url of current site */
+    var url = window.location.hash;
+    var hash = url.substring(url.indexOf("#")+1);
+    /* if no hash, it's a fresh load, serving home, otherwise the requested page */ 
+    var pageToLoad = hash;
+    $(document).ready(function(){
+        $('.homePageContents').load("homePageContents.html");
+    });
+</script>
 <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-<title>NYSL Home</title>
+<!--set correct title-->
+<title id="dynamicTitle">NYSL</title>
+<script type="text/javascript">
+    window.onload = function setTitle(){
+        var title = `NYSL ${hash}`
+        document.getElementById('dynamicTitle').innerHTML = title;
+    };
+</script>
 </head>
 <body>
 <header>
+    <div class="pageTitle"><h1>Northside Youth Soccer League</h1></div>
     <div class="logo">
         <img src="img/nysl_logo.png" alt="NYSL logo">
     </div>
-    <h1>Northside Youth Soccer League</h1>
 </header>
 
-<nav class="topnav">
-    <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>          
+<section>
+    <div class="upcomingEvents">
+        <h2>Upcoming Events</h2>
+    </div>
+</section>
+
+<nav>
+    <div class="topnav">
+        <ul>
+            <li><a id="homeLink" href="#Home">Home</a></li>
+            <li><a id="aboutLink" href="#About">About Us</a></li>
+            <li><a id="contactLink" href="#Contact">Contact</a></li>
+        </ul>      
+    </div>    
 </nav>
 
 <section>
-    <img src="img/soccer_image1.jpeg" alt="NYSL Soccer Game">
-    <h2>Upcoming Events</h2>
-    <h3>August 4</h3>
-    <p>NYSL Fundraiser</p>
-    <h3>August 16</h3>
-    <p>Season Kickoff: Meet the Teams</p>
-    <h3>September 1</h3>
-    <p>First Game of the Season (Check Game Schedule for details)</p>
+    <div id="mainContents" class="homePageContents"></div>
 </section>
 
 <footer>
     <div class="css-switcher">
         <button id="design1">Design 1</button>
         <button id="design2">Design 2</button>
+        <button id="design3">Design 3</button>
     </div>
 </footer>
-    
+
+<!--CSS switch buttons-->
 <script type="text/javascript">
     document.getElementById("design1").onclick = function() {
         document.getElementById("pageStyle").href="css/style1.css"; 
@@ -50,6 +71,43 @@
     document.getElementById("design2").onclick = function() {
         document.getElementById("pageStyle").href="css/style2.css"; 
     };
+    document.getElementById("design3").onclick = function() {
+        document.getElementById("pageStyle").href="css/style3.css"; 
+    };
+</script>
+
+<!--jQuery menu-->
+<script type="text/javascript">
+    $('#homeLink').click(function() {
+        $('#mainContents').removeClass();
+        $('#mainContents').addClass('homePageContents');
+        $('#aboutLink').removeClass();
+        $('#contactLink').removeClass();
+        $('#homeLink').addClass('active');
+        $(document).ready(function(){
+            $('.homePageContents').load("homePageContents.html");
+        });
+    });
+    $('#aboutLink').click(function() {
+        $('#mainContents').removeClass();
+        $('#mainContents').addClass('aboutPageContents');
+        $('#homeLink').removeClass();
+        $('#contactLink').removeClass();
+        $('#aboutLink').addClass('active');
+        $(document).ready(function(){
+            $('.aboutPageContents').load("aboutPageContents.html");
+        });
+    });
+    $('#contactLink').click(function() {
+        $('#mainContents').removeClass();
+        $('#mainContents').addClass('contactPageContents');
+        $('#homeLink').removeClass();
+        $('#aboutLink').removeClass();
+        $('#contactLink').addClass('active');
+        $(document).ready(function(){
+            $('.contactPageContents').load("contactPageContents.html");
+        });
+    });
 </script>
 </body>
 </html>
