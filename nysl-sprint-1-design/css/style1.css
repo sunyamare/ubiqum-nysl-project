@@ -1,5 +1,5 @@
 body {
-    margin: 0 auto 60px;
+    margin: -24px auto 60px;
     max-width: 1200px;
     line-height: 1.6;
     font-size: 18px;
@@ -27,7 +27,8 @@ header {
 .banner {
     background-color: #323232;
     z-index: 10;
-    margin-bottom: 30px;
+    top: -1px;
+    position: relative;
 }
 
 .banner h2 {
@@ -50,8 +51,8 @@ h3 {
 
 .logo {
     position: absolute;
-    right: 15%;
-    top: 37%;
+    right: 6%;
+    top: 188px;
     z-index: 100;
 }
 
@@ -59,37 +60,41 @@ h3 {
     max-width: 120px;
 }
 
+.contents {
+    position: absolute;
+    left: 200px;
+    overflow: hidden;
+    padding: 5px 15px 0 0;
+    margin-bottom: 50px;
+}
+
 nav {
-    position: relative;
-    top: 40px;
+    width: 200px;
+    line-height: normal;
+    position: absolute;
+    top: 280px;
 }
 
 .topnav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    overflow: hidden;
-}
-
-.topnav li {
-float: left;
 }
 
 .topnav li a {
-display: block;
-color: #444;
-text-align: center;
-padding: 1em;
-text-decoration: none;
+    display: block;
+    color: #444;
+    text-align: left;
+    padding: 1em;
+    text-decoration: none;
 }
 
 .topnav li a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .topnav li a.active {
-text-decoration: underline;
-color: #222;
+    text-decoration: underline;
+    color: #222;
 }
 
 footer {
@@ -113,10 +118,12 @@ button {
     margin: 5px;
 }
 
-/*
-@media only screen and (min-width: 600px) {
-    img {
-        display: none;
+@media only screen and (min-width: 1200px) {
+    .logo {
+        right: 15%;
+    }
+    .contents {
+        position: relative;
+        width: 995px;
     }
 }
-*/
