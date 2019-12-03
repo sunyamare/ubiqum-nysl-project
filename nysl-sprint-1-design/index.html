@@ -7,22 +7,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link id="pageStyle" rel="stylesheet" type="text/css" href="css/style1.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--load the correct content, set hash-->
 <script type="text/javascript">
     /* get hash from url of current site */
-    var url = window.location.hash;
-    var hash = url.substring(url.indexOf("#")+1);
+    function getHash() {
+        var url = window.location.hash;
+        var hash = url.substring(url.indexOf("#")+1);
+        if(hash === ""){
+            hash = "home";
+        }
+        return hash;
+    }
     /* if no hash, it's a fresh load, serving home, otherwise the requested page */ 
-    var pageToLoad = hash;
+    var pageToLoad = `${getHash()}PageContents.html`;
     $(document).ready(function(){
-        $('.homePageContents').load("homePageContents.html");
+        $('.homePageContents').load(pageToLoad);
     });
 </script>
 <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-<!--set correct title-->
-<title id="dynamicTitle">NYSL</title>
+
+<!--capitalize first letter of a string-->
+<script type="text/javascript">
+    function capitalize(word) {
+        if (typeof word !== 'string') return ''
+        return word.charAt(0).toUpperCase() + word.slice(1)
+    }
+    /* console.log(capitalize('flavio')) //'Flavio' */
+</script>
+
+<!--function to set the correct title on page load-->
+<title id="dynamicTitle"></title>
 <script type="text/javascript">
     window.onload = function setTitle(){
-        var title = `NYSL ${hash}`
+        var title = `NYSL ${capitalize(getHash())}`
         document.getElementById('dynamicTitle').innerHTML = title;
     };
 </script>
@@ -36,24 +54,18 @@
 </header>
 
 <section>
-    <div class="upcomingEvents">
-        <h2>Upcoming Events</h2>
-    </div>
+    <div id="mainContents" class="homePageContents"></div>
 </section>
 
 <nav>
-    <div class="topnav">
-        <ul>
-            <li><a id="homeLink" href="#Home">Home</a></li>
-            <li><a id="aboutLink" href="#About">About Us</a></li>
-            <li><a id="contactLink" href="#Contact">Contact</a></li>
-        </ul>      
-    </div>    
-</nav>
-
-<section>
-    <div id="mainContents" class="homePageContents"></div>
-</section>
+        <div class="topnav">
+            <ul>
+                <li><a id="homeLink" href="#Home">Home</a></li>
+                <li><a id="aboutLink" href="#About">About Us</a></li>
+                <li><a id="contactLink" href="#Contact">Contact</a></li>
+            </ul>      
+        </div>    
+    </nav>
 
 <footer>
     <div class="css-switcher">
@@ -78,6 +90,10 @@
 
 <!--jQuery menu-->
 <script type="text/javascript">
+    function replaceTitle(newTitle) {
+        var title = `NYSL ${newTitle}`
+        document.getElementById('dynamicTitle').innerHTML = title;
+    };
     $('#homeLink').click(function() {
         $('#mainContents').removeClass();
         $('#mainContents').addClass('homePageContents');
@@ -87,6 +103,7 @@
         $(document).ready(function(){
             $('.homePageContents').load("homePageContents.html");
         });
+        replaceTitle(getHash());
     });
     $('#aboutLink').click(function() {
         $('#mainContents').removeClass();
@@ -97,6 +114,7 @@
         $(document).ready(function(){
             $('.aboutPageContents').load("aboutPageContents.html");
         });
+        replaceTitle(getHash());
     });
     $('#contactLink').click(function() {
         $('#mainContents').removeClass();
@@ -107,6 +125,7 @@
         $(document).ready(function(){
             $('.contactPageContents').load("contactPageContents.html");
         });
+        replaceTitle(getHash());
     });
 </script>
 </body>
