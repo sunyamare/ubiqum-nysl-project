@@ -23,18 +23,18 @@ h3 {
     max-width: 120px;
 }
 
-.menu ul {
+.topnav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-.menu li {
+.topnav li {
 float: left;
 }
 
-.menu li a {
+.topnav li a {
 display: block;
 color: #444;
 text-align: center;
@@ -42,11 +42,11 @@ padding: 1em;
 text-decoration: none;
 }
 
-.menu li a:hover {
+.topnav li a:hover {
 text-decoration: underline;
 }
 
-.menu li a.active {
+.topnav li a.active {
 text-decoration: underline;
 color: #222;
 }
