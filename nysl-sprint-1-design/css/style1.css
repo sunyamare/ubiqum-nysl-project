@@ -1,3 +1,10 @@
+/* 
+To do: 
+- responsiveness (mobile devices logo and menu different location)
+- onload home selected in menu
+- switching sites should lead to a title change on top
+*/
+
 body {
     margin: -24px auto 60px;
     max-width: 1200px;

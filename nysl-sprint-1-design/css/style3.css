@@ -1,3 +1,10 @@
+/* 
+To do:
+- sitemap generator? 
+- hide html files where content is
+- pre-render??
+*/
+
 body {
     margin: 10px auto 60px;
     max-width: 800px;
