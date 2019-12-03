@@ -10,6 +10,11 @@ body {
     background-color: lightgreen;
 }
 
+header {
+    background: url("../img/design2_image1.jpg") no-repeat;
+    background-size: cover;
+}
+
 h1, h2 {
     line-height: 1.3;
     font-weight: 300;
@@ -57,7 +62,7 @@ footer {
     position: fixed;
     background-color: lightgrey;
     width: 100%;
-    margin-left: -10px;
+    max-width: inherit;
     padding: 5px 0;
 }
 
