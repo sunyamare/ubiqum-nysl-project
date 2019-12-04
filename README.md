@@ -1,13 +1,9 @@
-# ubiqum-mern
-Ubiqum MERN bootcamp stuff
+# ubiqum-nysl-project
+Ubiqum MERN first project
 
-## Links to projects
-### First day's work: 
+## First day's work: 
 https://github.com/sunyamare/ubiqum-mern/tree/master/nysl-sprint-1/
-
-Live on https://vigorous-hopper-0ca59a.netlify.com/
-
-### 2nd day's work:
+## NYSL project, first week:
 https://github.com/sunyamare/ubiqum-mern/tree/master/nysl-sprint-1-design/
 
-Live on https://5de6bb8cb962215d723e8683--vigorous-hopper-0ca59a.netlify.com/
+Latst NYSL project live on Netlify: https://vigorous-lamport-c17a5f.netlify.com/ 
