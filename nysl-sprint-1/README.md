@@ -1,4 +1,2 @@
-#Ubiqum Sprint 1
+#NYSL Sprint 1 - work of the first day at the bootcamp
 Create a simple HTML CSS website
-
-Live on https://vigorous-hopper-0ca59a.netlify.com (thanks to netlify)
