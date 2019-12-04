@@ -5,7 +5,7 @@ Ubiqum MERN bootcamp stuff
 ### First day's work: 
 https://github.com/sunyamare/ubiqum-mern/tree/master/nysl-sprint-1/
 
-Live on https://vigorous-hopper-0ca59a.netlify.com/index.html
+Live on https://vigorous-hopper-0ca59a.netlify.com/
 
 ### 2nd day's work:
 https://github.com/sunyamare/ubiqum-mern/tree/master/nysl-sprint-1-design/
