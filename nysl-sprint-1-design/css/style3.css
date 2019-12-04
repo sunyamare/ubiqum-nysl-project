@@ -12,8 +12,7 @@ responsiveness design 1 & 2
 */
 
 body {
-    margin: 10px auto 60px;
-    max-width: 800px;
+    margin: 0 auto;
     line-height: 1.6;
     font-size: 18px;
     color: #444;
@@ -21,27 +20,49 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
+h1,
+h2 {
+    line-height: 1.3;
+    font-weight: bold;
+    margin-bottom: 0em;
+}
+
+h1 {
+    margin: 0em;
+}
+
+h3 {
+    margin-bottom: -0.6em;
+}
+
 header {
     background: url("../img/Youth-Soccer.jpg") bottom center no-repeat;
     background-size: cover;
     height: 461px;
-    max-height: 400px;
+    max-height: 200px;
 }
 
 .pageTitle {
-    background: rgba(255, 255, 255, 0.6);
-    width: fit-content;
+    position: absolute;
+    top: 110px;
+    width: 100%;
 }
 
 .pageTitle h1 {
-    padding: 2px 12px;
+    padding: 2px 30px;
+    margin: 0 auto;
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.7);
+    width: fit-content;
 }
 
-.upcomingEvents {
+.banner {
     background-color: #323232;
+    top: -1px;
+    position: relative;
 }
 
-.upcomingEvents h2 {
+.banner h2 {
     margin-top: 0;
     text-align: center;
     padding: 3px 0;
@@ -49,32 +70,36 @@ header {
     font-weight: bold;
 }
 
-h1,
-h2 {
-    line-height: 1.3;
-    font-weight: 300;
-    margin-bottom: 0em;
-}
-
-h3 {
-    margin-bottom: -0.6em;
-}
-
 .logo {
-    position: absolute;
-    right: 15%;
-    top: 37%;
+    position: relative;
+    top: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 .logo img {
-    max-width: 120px;
+    max-width: 80px;
+}
+
+.contents {
+    overflow: hidden;
+    padding: 5px 25px;
+    margin-bottom: 100px;
+}
+
+nav {
+    width: 100%;
+    line-height: normal;
+    position: fixed;
+    bottom: 60px;
+    background-color: #323232;
 }
 
 .topnav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    overflow: hidden;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .topnav li {
@@ -83,19 +108,21 @@ h3 {
 
 .topnav li a {
     display: block;
-    color: #444;
-    text-align: center;
-    padding: 1em;
+    color: #ebebeb;
+    text-align: left;
+    padding: 8.5px 15px;
     text-decoration: none;
+    font-size: 20px;
+    margin: 0 5px;
 }
 
 .topnav li a:hover {
-    text-decoration: underline;
+    background-color: #252525;
 }
 
 .topnav li a.active {
-    text-decoration: underline;
-    color: #222;
+    color: #fff;
+    background-color: #101010;
 }
 
 footer {
@@ -105,21 +132,26 @@ footer {
     width: 100%;
     max-width: inherit;
     padding: 5px 0 0 0;
-    margin-bottom: -10px;
+    height: 55px;
 }
 
-footer .css-switcher {
+footer span {
+    font-size: 12px;
+}
+
+.css-switcher {
     width: fit-content;
     margin: 0 auto;
     height: 18px;
 }
 
-footer .css-switcher span {
+.css-switcher span {
     float: left;
     padding-top: 3px;
+    padding-right: 5px;
 }
 
-footer .site-notice {
+.site-notice {
     margin: 0 auto;
     width: fit-content;
 }
@@ -127,14 +159,57 @@ footer .site-notice {
 button {
     display: block;
     float: left;
-    padding: 5px 10px;
-    margin: 5px;
+    padding: 4px 8px;
+    margin: 1px;
 }
 
-/*
-@media only screen and (min-width: 600px) {
-    img {
-        display: none;
+@media only screen and (min-width: 455px) {
+    .pageTitle h1 {
+        border-radius: 12px;
     }
 }
-*/
+
+@media only screen and (min-width: 500px) {
+    footer span {
+        font-size: initial;
+    }
+    button {
+        display: block;
+        float: left;
+        padding: 5px 10px;
+        margin: 5px;
+    }
+    footer {
+        height: 70px;
+    }
+    nav {
+        bottom: 75px;
+    }
+    .contents {
+        margin-bottom: 120px;
+    }
+}
+
+@media only screen and (min-width: 755px) {
+    .pageTitle {
+        width: fit-content;
+        top: 49px;
+        width: initial;
+    }
+    .logo {
+        position: absolute;
+        left: 3%;
+        top: 30px;
+        width: initial;
+        text-align: initial;
+    }
+    .logo img {
+        max-width: 120px;
+    }
+
+    .pageTitle {
+        position: absolute;
+        top: 70px;
+        left: 180px;
+    }
+}

@@ -108,21 +108,26 @@ footer {
     width: 100%;
     max-width: inherit;
     padding: 5px 0 0 0;
-    margin-bottom: -10px;
+    height: 55px;
 }
 
-footer .css-switcher {
+footer span {
+    font-size: 12px;
+}
+
+.css-switcher {
     width: fit-content;
     margin: 0 auto;
     height: 18px;
 }
 
-footer .css-switcher span {
+.css-switcher span {
     float: left;
     padding-top: 3px;
+    padding-right: 5px;
 }
 
-footer .site-notice {
+.site-notice {
     margin: 0 auto;
     width: fit-content;
 }
@@ -130,8 +135,8 @@ footer .site-notice {
 button {
     display: block;
     float: left;
-    padding: 5px 10px;
-    margin: 5px;
+    padding: 4px 8px;
+    margin: 1px;
 }
 
 /*

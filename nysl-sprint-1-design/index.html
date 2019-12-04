@@ -11,7 +11,7 @@
             id="pageStyle"
             rel="stylesheet"
             type="text/css"
-            href="css/style1.css"
+            href="css/style3.css"
         />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -59,9 +59,11 @@
     <body>
         <header>
             <div class="pageTitle"><h1>Northside Youth Soccer League</h1></div>
-            <div class="logo">
-                <img src="img/nysl_logo.png" alt="NYSL logo" />
-            </div>
+            <a id="homeLink2" href="#Home">
+                <div class="logo">
+                    <img src="img/nysl_logo.png" alt="NYSL logo" />
+                </div>
+            </a>
         </header>
 
         <section id="mainContents" class="homePageContents"></section>
@@ -82,14 +84,14 @@
                 <button id="design3">My Design</button>
             </div>
             <div class="site-notice">
-                <p>
+                <span>
                     Site notice: This is a demo page! Contact:
                     <a
                         href="https://sunyamare.ch/"
                         alt="Link to the website owner's personal website"
                         >sunyamare.ch</a
                     >
-                </p>
+                </span>
             </div>
         </footer>
 
@@ -113,6 +115,17 @@
                 document.getElementById("dynamicTitle").innerHTML = title;
             }
             $("#homeLink").click(function() {
+                $("#mainContents").removeClass();
+                $("#mainContents").addClass("homePageContents");
+                $("#aboutLink").removeClass();
+                $("#contactLink").removeClass();
+                $("#homeLink").addClass("active");
+                $(document).ready(function() {
+                    $(".homePageContents").load("homePageContents.html");
+                });
+                replaceTitle(getHash());
+            });
+            $("#homeLink2").click(function() {
                 $("#mainContents").removeClass();
                 $("#mainContents").addClass("homePageContents");
                 $("#aboutLink").removeClass();
