@@ -1,8 +1,8 @@
 /* 
 To do:
+(- functional stuff in style1.css)
 - sitemap generator? 
-- hide html files where content is
-- pre-render??
+- hide html files where content is?
 */
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background: url("../img/Youth-Soccer.jpg") bottom center no-repeat;;
+    background: url("../img/Youth-Soccer.jpg") bottom center no-repeat;
     background-size: cover;
     height: 461px;
     max-height: 400px;
@@ -43,7 +43,8 @@ header {
     font-weight: bold;
 }
 
-h1, h2 {
+h1,
+h2 {
     line-height: 1.3;
     font-weight: 300;
     margin-bottom: 0em;
@@ -71,24 +72,24 @@ h3 {
 }
 
 .topnav li {
-float: left;
+    float: left;
 }
 
 .topnav li a {
-display: block;
-color: #444;
-text-align: center;
-padding: 1em;
-text-decoration: none;
+    display: block;
+    color: #444;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
 }
 
 .topnav li a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .topnav li a.active {
-text-decoration: underline;
-color: #222;
+    text-decoration: underline;
+    color: #222;
 }
 
 footer {
@@ -97,12 +98,24 @@ footer {
     background-color: lightgrey;
     width: 100%;
     max-width: inherit;
-    padding: 5px 0;
+    padding: 5px 0 0 0;
+    margin-bottom: -10px;
 }
 
-.css-switcher {
+footer .css-switcher {
     width: fit-content;
     margin: 0 auto;
+    height: 18px;
+}
+
+footer .css-switcher span {
+    float: left;
+    padding-top: 3px;
+}
+
+footer .site-notice {
+    margin: 0 auto;
+    width: fit-content;
 }
 
 button {
