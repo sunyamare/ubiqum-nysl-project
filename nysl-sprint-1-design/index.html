@@ -18,19 +18,16 @@
             type="text/css"
             href="css/style3.css"
         />
+        <title id="dynamicTitle"></title>
+
         <script src="js/jquery.min.js"></script>
 
-        <!--load the correct content, set hash-->
         <script type="text/javascript">
-            /* function to check if there's a hash in the url 
-            function hasHash() {
-                var url = window.location.hash;
-                if (url) {
-                    return true;
-                }
-                return false;
+            /* function to lowercase the first letter of a string */
+            function capitalize(word) {
+                if (typeof word !== "string") return "";
+                return word.charAt(0).toUpperCase() + word.slice(1);
             }
-            console.log(hasHash());*/
 
             /* function to get hash from url, otherwise return "home" as hash */
             function getHash() {
@@ -39,9 +36,9 @@
                 if (hash === "") {
                     hash = "home";
                 }
-                return hash;
+                return capitalize(hash);
             }
-            console.log(getHash());
+            console.log("current hash: " + getHash());
 
             /* function to generate a class name from a hash */
             function generateClassName(hash) {
@@ -60,35 +57,25 @@
             console.log(generatePageName(getHash()));
 
             /* serve requested page (or home) */
-            $(document).ready(function() {
+            $(document).ready(function serveRequestedPage() {
                 $(generateClassName(getHash())).load(
                     generatePageName(getHash())
                 );
             });
-        </script>
 
-        <!--capitalize first letter of a string-->
-        <script type="text/javascript">
-            function capitalize(word) {
-                if (typeof word !== "string") return "";
-                return word.charAt(0).toUpperCase() + word.slice(1);
+            /* function to set the correct title on page load */
+            function setTitle() {
+                $(document).ready(function() {
+                    document.title = `NYSL ${getHash()}`;
+                });
             }
-            /* console.log(capitalize('flavio')) //'Flavio' */
-        </script>
-
-        <!--function to set the correct title on page load-->
-        <title id="dynamicTitle"></title>
-        <script type="text/javascript">
-            window.onload = function setTitle() {
-                var title = `NYSL ${capitalize(getHash())}`;
-                document.getElementById("dynamicTitle").innerHTML = title;
-            };
+            setTitle();
         </script>
     </head>
     <body>
         <header>
             <div class="pageTitle"><h1>Northside Youth Soccer League</h1></div>
-            <a id="homeLink2" href="#Home">
+            <a id="homeLink2" href="#home">
                 <div class="logo">
                     <img src="img/nysl_logo.png" alt="NYSL logo" />
                 </div>
@@ -99,9 +86,9 @@
 
         <nav class="topnav">
             <ul>
-                <li><a id="homeLink" href="#Home">Home</a></li>
-                <li><a id="aboutLink" href="#About">About Us</a></li>
-                <li><a id="contactLink" href="#Contact">Contact</a></li>
+                <li><a id="homeLink" href="#home">Home</a></li>
+                <li><a id="aboutLink" href="#about">About Us</a></li>
+                <li><a id="contactLink" href="#contact">Contact</a></li>
             </ul>
         </nav>
 
@@ -124,8 +111,8 @@
             </div>
         </footer>
 
-        <!--CSS switch buttons-->
         <script type="text/javascript">
+            /* CSS switch buttons */
             document.getElementById("design1").onclick = function() {
                 document.getElementById("pageStyle").href = "css/style1.css";
             };
@@ -135,14 +122,8 @@
             document.getElementById("design3").onclick = function() {
                 document.getElementById("pageStyle").href = "css/style3.css";
             };
-        </script>
 
-        <!--jQuery menu-->
-        <script type="text/javascript">
-            function replaceTitle(newTitle) {
-                var title = `NYSL ${newTitle}`;
-                document.getElementById("dynamicTitle").innerHTML = title;
-            }
+            /* jQuery menu */
             $("#homeLink").click(function() {
                 $("#mainContents").removeClass();
                 $("#mainContents").addClass("homePageContents");
@@ -152,7 +133,12 @@
                 $(document).ready(function() {
                     $(".homePageContents").load("homePageContents.html");
                 });
-                replaceTitle(getHash());
+                setTitle();
+
+                /* set the correct page title */
+                $(document).ready(function() {
+                    setTitle();
+                });
             });
             $("#homeLink2").click(function() {
                 $("#mainContents").removeClass();
@@ -163,7 +149,9 @@
                 $(document).ready(function() {
                     $(".homePageContents").load("homePageContents.html");
                 });
-                replaceTitle(getHash());
+
+                /* set the correct page title */
+                setTitle();
             });
             $("#aboutLink").click(function() {
                 $("#mainContents").removeClass();
@@ -174,7 +162,9 @@
                 $(document).ready(function() {
                     $(".aboutPageContents").load("aboutPageContents.html");
                 });
-                replaceTitle(getHash());
+
+                /* set the correct page title */
+                setTitle();
             });
             $("#contactLink").click(function() {
                 $("#mainContents").removeClass();
@@ -185,7 +175,9 @@
                 $(document).ready(function() {
                     $(".contactPageContents").load("contactPageContents.html");
                 });
-                replaceTitle(getHash());
+
+                /* set the correct page title */
+                setTitle();
             });
         </script>
     </body>
