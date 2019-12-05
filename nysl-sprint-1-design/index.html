@@ -22,7 +22,17 @@
 
         <!--load the correct content, set hash-->
         <script type="text/javascript">
-            /* get hash from url of current site */
+            /* function to check if there's a hash in the url 
+            function hasHash() {
+                var url = window.location.hash;
+                if (url) {
+                    return true;
+                }
+                return false;
+            }
+            console.log(hasHash());*/
+
+            /* function to get hash from url, otherwise return "home" as hash */
             function getHash() {
                 var url = window.location.hash;
                 var hash = url.substring(url.indexOf("#") + 1);
@@ -31,17 +41,31 @@
                 }
                 return hash;
             }
-            /* if no hash, it's a fresh load, serving home, otherwise the requested page */
+            console.log(getHash());
 
-            var pageToLoad = `${getHash()}PageContents.html`;
+            /* function to generate a class name from a hash */
+            function generateClassName(hash) {
+                var className = `.${hash}PageContents`;
+                console.log(className);
+                return className;
+            }
+            console.log(generateClassName(getHash()));
+
+            /* function to generate a html page name from a hash */
+            function generatePageName(hash) {
+                var pageName = `${hash}PageContents.html`;
+                console.log(pageName);
+                return pageName;
+            }
+            console.log(generatePageName(getHash()));
+
+            /* serve requested page (or home) */
             $(document).ready(function() {
-                $(".homePageContents").load(pageToLoad);
+                $(generateClassName(getHash())).load(
+                    generatePageName(getHash())
+                );
             });
         </script>
-        <link
-            href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
-            rel="stylesheet"
-        />
 
         <!--capitalize first letter of a string-->
         <script type="text/javascript">
