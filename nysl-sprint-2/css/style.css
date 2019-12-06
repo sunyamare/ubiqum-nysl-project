@@ -102,7 +102,7 @@ header {
 .contents {
     overflow: hidden;
     padding: 5px 25px;
-    margin-bottom: 100px;
+    margin-bottom: 72px;
 }
 
 nav {
@@ -183,9 +183,6 @@ button {
         float: left;
         padding: 5px 10px;
         margin: 5px;
-    }
-    .contents {
-        margin-bottom: 120px;
     }
 }
 
