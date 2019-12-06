@@ -97,8 +97,9 @@ header {
 
 .banner {
     background-color: #323232;
-    top: -1px;
-    position: relative;
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
 }
 
 .banner h2 {
@@ -124,6 +125,27 @@ header {
     overflow: hidden;
     padding: 5px 25px;
     margin-bottom: 72px;
+}
+
+/* AREA back to top button */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 0px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(79, 79, 79);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#backToTop:hover {
+    background-color: rgb(42, 42, 42);
 }
 
 /* AREA pageContent specific shizzles */
