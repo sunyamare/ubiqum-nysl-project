@@ -28,12 +28,18 @@
 
         <section id="mainContents" class="homePageContents"></section>
 
-        <nav class="topnav">
+        <nav class="topnav" id="responsiveNav">
             <ul>
                 <li><a id="homeLink" href="#home">Home</a></li>
                 <li><a id="aboutLink" href="#about">About Us</a></li>
                 <li><a id="contactLink" href="#contact">Contact</a></li>
                 <li><a id="rulesLink" href="#rules">Rules</a></li>
+                <a
+                    href="javascript:void(0);"
+                    class="icon"
+                    onclick="changeNavClass()"
+                    >&#9776;</a
+                >
             </ul>
         </nav>
 
@@ -160,6 +166,16 @@
             function topFunction() {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
+            }
+
+            /* responsive bottom navigation */
+            function changeNavClass() {
+                var x = document.getElementById("responsiveNav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
             }
         </script>
     </body>
