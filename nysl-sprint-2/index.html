@@ -33,6 +33,7 @@
                 <li><a id="homeLink" href="#home">Home</a></li>
                 <li><a id="aboutLink" href="#about">About Us</a></li>
                 <li><a id="contactLink" href="#contact">Contact</a></li>
+                <li><a id="rulesLink" href="#rules">Rules</a></li>
             </ul>
         </nav>
 
@@ -101,6 +102,7 @@
                     $("#aboutLink").removeClass();
                     $("#contactLink").removeClass();
                     $("#homeLink").removeClass();
+                    $("#rulesLink").removeClass();
                     $(`#${getHash()}Link`).addClass("active");
                 });
             }
@@ -123,6 +125,11 @@
                 setTitle();
             });
             $("#contactLink").click(function() {
+                serveRequestedPage();
+                setActiveMenuClass();
+                setTitle();
+            });
+            $("#rulesLink").click(function() {
                 serveRequestedPage();
                 setActiveMenuClass();
                 setTitle();
