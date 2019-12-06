@@ -36,37 +36,37 @@
                 if (hash === "") {
                     hash = "home";
                 }
-                return capitalize(hash);
+                return hash;
             }
-            console.log("current hash: " + getHash());
+            // console.log("current hash: " + getHash());
 
             /* function to generate a class name from a hash */
-            function generateClassName(hash) {
-                var className = `.${hash}PageContents`;
-                console.log(className);
+            function generateClassName() {
+                var className = `.${getHash()}PageContents`;
                 return className;
             }
-            console.log(generateClassName(getHash()));
+            // console.log("class name: " + generateClassName());
 
             /* function to generate a html page name from a hash */
-            function generatePageName(hash) {
-                var pageName = `${hash}PageContents.html`;
-                console.log(pageName);
+            function generatePageName() {
+                var pageName = `${getHash()}PageContents.html`;
                 return pageName;
             }
-            console.log(generatePageName(getHash()));
+            // console.log("page name: " + generatePageName());
 
             /* serve requested page (or home) */
-            $(document).ready(function serveRequestedPage() {
-                $(generateClassName(getHash())).load(
-                    generatePageName(getHash())
-                );
-            });
+            function serveRequestedPage() {
+                $(document).ready(function() {
+                    $(generateClassName()).load(generatePageName());
+                });
+                // console.log("serving requested page as logged above ^");
+            }
+            serveRequestedPage();
 
             /* function to set the correct title on page load */
             function setTitle() {
                 $(document).ready(function() {
-                    document.title = `NYSL ${getHash()}`;
+                    document.title = `NYSL ${capitalize(getHash())}`;
                 });
             }
             setTitle();
