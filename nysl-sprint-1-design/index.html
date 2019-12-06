@@ -19,63 +19,12 @@
             href="css/style3.css"
         />
         <title id="dynamicTitle"></title>
-
         <script src="js/jquery.min.js"></script>
-
-        <script type="text/javascript">
-            /* function to lowercase the first letter of a string */
-            function capitalize(word) {
-                if (typeof word !== "string") return "";
-                return word.charAt(0).toUpperCase() + word.slice(1);
-            }
-
-            /* function to get hash from url, otherwise return "home" as hash */
-            function getHash() {
-                var url = window.location.hash;
-                var hash = url.substring(url.indexOf("#") + 1);
-                if (hash === "") {
-                    hash = "home";
-                }
-                return hash;
-            }
-            // console.log("current hash: " + getHash());
-
-            /* function to generate a class name from a hash */
-            function generateClassName() {
-                var className = `.${getHash()}PageContents`;
-                return className;
-            }
-            // console.log("class name: " + generateClassName());
-
-            /* function to generate a html page name from a hash */
-            function generatePageName() {
-                var pageName = `${getHash()}PageContents.html`;
-                return pageName;
-            }
-            // console.log("page name: " + generatePageName());
-
-            /* serve requested page (or home) */
-            function serveRequestedPage() {
-                $(document).ready(function() {
-                    $(generateClassName()).load(generatePageName());
-                });
-                // console.log("serving requested page as logged above ^");
-            }
-            serveRequestedPage();
-
-            /* function to set the correct title on page load */
-            function setTitle() {
-                $(document).ready(function() {
-                    document.title = `NYSL ${capitalize(getHash())}`;
-                });
-            }
-            setTitle();
-        </script>
     </head>
     <body>
         <header>
             <div class="pageTitle"><h1>Northside Youth Soccer League</h1></div>
-            <a id="homeLink2" href="#home">
+            <a id="logoLink" href="#home">
                 <div class="logo">
                     <img src="img/nysl_logo.png" alt="NYSL logo" />
                 </div>
@@ -112,73 +61,101 @@
         </footer>
 
         <script type="text/javascript">
-            /* CSS switch buttons */
-            document.getElementById("design1").onclick = function() {
-                document.getElementById("pageStyle").href = "css/style1.css";
-            };
-            document.getElementById("design2").onclick = function() {
-                document.getElementById("pageStyle").href = "css/style2.css";
-            };
-            document.getElementById("design3").onclick = function() {
-                document.getElementById("pageStyle").href = "css/style3.css";
-            };
+            /* function to lowercase the first letter of a string */
+            function capitalize(word) {
+                if (typeof word !== "string") return "";
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            }
 
-            /* jQuery menu */
+            /* function to get hash from url, otherwise return "home" as hash */
+            function getHash() {
+                var url = window.location.hash;
+                var hash = url.substring(url.indexOf("#") + 1);
+                if (hash === "") {
+                    hash = "home";
+                }
+                // console.log("current hash: " + hash);
+                return hash;
+            }
+
+            /* function to generate a class name from a hash */
+            function generateClassName() {
+                var className = `.${getHash()}PageContents`;
+                // console.log("class name: " + className);
+                return className;
+            }
+
+            /* function to generate a html page name from a hash */
+            function generatePageName() {
+                var pageName = `${getHash()}PageContents.html`;
+                // console.log("page name: " + pageName);
+                return pageName;
+            }
+
+            /* function to serve requested page (or home) */
+            function serveRequestedPage() {
+                $(document).ready(function() {
+                    $("#mainContents").removeClass();
+                    $("#mainContents").addClass(generateClassName().substr(1));
+                    $(generateClassName()).load(generatePageName());
+                });
+            }
+            serveRequestedPage(); // for the first page load
+
+            /* function to set the correct title on page load */
+            function setTitle() {
+                $(document).ready(function() {
+                    document.title = `NYSL ${capitalize(getHash())}`;
+                });
+            }
+            setTitle(); // for the first page load
+
+            /* function to set the active class in the menu */
+            function setActiveMenuClass() {
+                $(document).ready(function() {
+                    $("#aboutLink").removeClass();
+                    $("#contactLink").removeClass();
+                    $("#homeLink").removeClass();
+                    $(`#${getHash()}Link`).addClass("active");
+                });
+            }
+            setActiveMenuClass(); // for the first page load
+
+            /* actions per menu item */
             $("#homeLink").click(function() {
-                $("#mainContents").removeClass();
-                $("#mainContents").addClass("homePageContents");
-                $("#aboutLink").removeClass();
-                $("#contactLink").removeClass();
-                $("#homeLink").addClass("active");
-                $(document).ready(function() {
-                    $(".homePageContents").load("homePageContents.html");
-                });
+                serveRequestedPage();
+                setActiveMenuClass();
                 setTitle();
-
-                /* set the correct page title */
-                $(document).ready(function() {
-                    setTitle();
-                });
             });
-            $("#homeLink2").click(function() {
-                $("#mainContents").removeClass();
-                $("#mainContents").addClass("homePageContents");
-                $("#aboutLink").removeClass();
-                $("#contactLink").removeClass();
-                $("#homeLink").addClass("active");
-                $(document).ready(function() {
-                    $(".homePageContents").load("homePageContents.html");
-                });
-
-                /* set the correct page title */
+            $("#logoLink").click(function() {
+                serveRequestedPage();
+                setActiveMenuClass();
                 setTitle();
             });
             $("#aboutLink").click(function() {
-                $("#mainContents").removeClass();
-                $("#mainContents").addClass("aboutPageContents");
-                $("#homeLink").removeClass();
-                $("#contactLink").removeClass();
-                $("#aboutLink").addClass("active");
-                $(document).ready(function() {
-                    $(".aboutPageContents").load("aboutPageContents.html");
-                });
-
-                /* set the correct page title */
+                serveRequestedPage();
+                setActiveMenuClass();
                 setTitle();
             });
             $("#contactLink").click(function() {
-                $("#mainContents").removeClass();
-                $("#mainContents").addClass("contactPageContents");
-                $("#homeLink").removeClass();
-                $("#aboutLink").removeClass();
-                $("#contactLink").addClass("active");
-                $(document).ready(function() {
-                    $(".contactPageContents").load("contactPageContents.html");
-                });
-
-                /* set the correct page title */
+                serveRequestedPage();
+                setActiveMenuClass();
                 setTitle();
             });
+
+            /* function to switch css files with buttons */
+            function switchCSS(design, css) {
+                document.getElementById(design).onclick = function() {
+                    document.getElementById(
+                        "pageStyle"
+                    ).href = `css/${css}.css`;
+                };
+            }
+
+            /* actions for css button switches */
+            switchCSS("design1", "style1");
+            switchCSS("design2", "style2");
+            switchCSS("design3", "style3");
         </script>
     </body>
 </html>
