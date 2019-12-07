@@ -28,18 +28,20 @@
 
         <section id="mainContents" class="homePageContents"></section>
 
-        <nav class="topnav" id="responsiveNav">
-            <ul>
-                <li><a id="homeLink" href="#home">Home</a></li>
-                <li><a id="aboutLink" href="#about">About Us</a></li>
-                <li><a id="contactLink" href="#contact">Contact</a></li>
-                <li><a id="rulesLink" href="#rules">Rules</a></li>
+        <nav id="responsiveNav" class="topnav">
+            <div class="menuToggle">
                 <a
                     href="javascript:void(0);"
                     class="icon"
                     onclick="changeNavClass()"
                     >&#9776;</a
                 >
+            </div>
+            <ul>
+                <li><a id="homeLink" href="#home">Home</a></li>
+                <li><a id="aboutLink" href="#about">About Us</a></li>
+                <li><a id="contactLink" href="#contact">Contact</a></li>
+                <li><a id="rulesLink" href="#rules">Rules</a></li>
             </ul>
         </nav>
 
@@ -118,31 +120,46 @@
             }
             setActiveMenuClass(); // for the first page load
 
+            /* responsive bottom navigation */
+            function changeNavClass() {
+                var x = document.getElementById("responsiveNav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+
+            /* function to remove responsive class from nav on menu element click */
+            function removeResponsiveNavClass() {
+                $(document).ready(function() {
+                    $("#responsiveNav").removeClass("responsive");
+                });
+            }
+
+            /* function with all the stuff that needs to be done on every link click */
+            function linkClickTasks() {
+                serveRequestedPage();
+                setActiveMenuClass();
+                setTitle();
+                removeResponsiveNavClass();
+            }
+
             /* actions per menu item */
             $("#homeLink").click(function() {
-                serveRequestedPage();
-                setActiveMenuClass();
-                setTitle();
+                linkClickTasks();
             });
             $("#logoLink").click(function() {
-                serveRequestedPage();
-                setActiveMenuClass();
-                setTitle();
+                linkClickTasks();
             });
             $("#aboutLink").click(function() {
-                serveRequestedPage();
-                setActiveMenuClass();
-                setTitle();
+                linkClickTasks();
             });
             $("#contactLink").click(function() {
-                serveRequestedPage();
-                setActiveMenuClass();
-                setTitle();
+                linkClickTasks();
             });
             $("#rulesLink").click(function() {
-                serveRequestedPage();
-                setActiveMenuClass();
-                setTitle();
+                linkClickTasks();
             });
 
             /* back to top button */
@@ -166,16 +183,6 @@
             function topFunction() {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
-            }
-
-            /* responsive bottom navigation */
-            function changeNavClass() {
-                var x = document.getElementById("responsiveNav");
-                if (x.className === "topnav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnav";
-                }
             }
         </script>
     </body>
