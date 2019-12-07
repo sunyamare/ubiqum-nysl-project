@@ -82,16 +82,16 @@ ul ul {
         transform: translateY(-5%);
     }
     20% {
-        transform: translateY(-12%);
+        transform: translateY(-10%);
     }
     30% {
-        transform: translateY(-20%);
+        transform: translateY(-15%);
     }
     40% {
-        transform: translateY(-30%);
+        transform: translateY(-40%);
     }
     50% {
-        transform: translateY(-50%);
+        transform: translateY(-60%);
     }
     60% {
         transform: translateY(-70%);
@@ -100,10 +100,10 @@ ul ul {
         transform: translateY(-60%);
     }
     80% {
-        transform: translateY(-40%);
+        transform: translateY(-35%);
     }
     90% {
-        transform: translateY(-20%);
+        transform: translateY(-10%);
     }
     100% {
         transform: translateY(0);
@@ -118,22 +118,23 @@ header {
 .background {
     background: url(../img/Youth-Soccer.jpg) top center no-repeat;
     background-size: cover;
-    height: 830px;
+    height: 835px;
     animation: backgroundSlider 15s linear infinite;
 }
 
 .pageTitle {
     position: absolute;
-    top: 185px;
+    top: 170px;
     width: 100%;
 }
 
 .pageTitle h1 {
     padding: 2px 30px;
     margin: 0 auto;
-    font-size: 1.3rem;
-    background: rgba(255, 255, 255, 0.7);
+    font-size: 1.7rem;
+    background: rgba(255, 255, 255, 0.8);
     width: fit-content;
+    font-weight: 400;
 }
 
 .banner {
@@ -148,12 +149,13 @@ header {
     text-align: center;
     padding: 3px 0;
     color: #fff;
-    font-weight: bold;
+    font-weight: 300;
+    font-size: 1.3rem;
 }
 
 .logo {
-    position: relative;
-    top: 100px;
+    position: absolute;
+    top: 80px;
     width: 100%;
     text-align: center;
 }
@@ -340,28 +342,46 @@ button {
 }
 
 @media only screen and (min-width: 800px) {
+    .banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .branding {
+        position: absolute;
+        left: 10%;
+        top: 0;
+        width: 90%;
+    }
     .logo {
         position: absolute;
-        left: 15px;
-        top: 30px;
+        left: 0;
+        top: 40px;
         width: initial;
         text-align: initial;
     }
     .logo img {
-        max-width: 120px;
+        max-width: 135px;
     }
-
     .pageTitle {
         position: absolute;
-        top: 70px;
-        left: 150px;
+        top: 87px;
+        left: 155px;
         width: unset;
     }
     .pageTitle h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
-    .menuToggle {
-        display: none;
+
+    .contents {
+        padding: 5px 25px;
+    }
+    .rulesPageContents li {
+        padding: 0 0 0 10px;
+        margin: 0 0 0 10px;
+    }
+    .aboutPageContents .half {
+        float: left;
+        width: 48%;
     }
 
     .bottomnav ul {
@@ -378,18 +398,7 @@ button {
     .bottomnav a.icon {
         display: none;
     }
-
-    .contents {
-        padding: 5px 25px;
-    }
-
-    .rulesPageContents li {
-        padding: 0 0 0 10px;
-        margin: 0 0 0 10px;
-    }
-
-    .aboutPageContents .half {
-        float: left;
-        width: 48%;
+    .menuToggle {
+        display: none;
     }
 }
