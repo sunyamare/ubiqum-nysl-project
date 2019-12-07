@@ -123,7 +123,7 @@ header {
 
 .contents {
     overflow: hidden;
-    padding: 5px 25px;
+    padding: 5px 10px;
     margin-bottom: 72px;
 }
 
@@ -131,8 +131,8 @@ header {
 #backToTop {
     display: none;
     position: fixed;
-    bottom: 70px;
-    right: 0px;
+    bottom: 75px;
+    right: 5px;
     z-index: 99;
     border: none;
     outline: none;
@@ -163,8 +163,8 @@ header {
 }
 
 .rulesPageContents li {
-    padding: 0 0 0 10px;
-    margin: 0 0 0 10px;
+    padding: 0;
+    margin: 0;
 }
 
 .rulesPageContents .contents > ol > li {
@@ -176,7 +176,7 @@ header {
 }
 
 /* AREA navigation */
-.topnav {
+.bottomnav {
     width: 100%;
     height: fit-content;
     position: fixed;
@@ -184,16 +184,17 @@ header {
     background-color: #4a4a4a;
     overflow: hidden;
     line-height: 1.5rem;
+    z-index: 100;
 }
 
-.topnav .menuToggle {
+.bottomnav .menuToggle {
     left: 0;
     position: absolute;
     bottom: 0;
     width: fit-content;
 }
 
-.topnav .menuToggle a.icon {
+.bottomnav .menuToggle a.icon {
     display: block;
     position: relative;
     left: 0;
@@ -202,7 +203,7 @@ header {
     text-align: center;
 }
 
-.topnav ul {
+.bottomnav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -210,10 +211,10 @@ header {
     position: relative;
 }
 
-.topnav a:not(.active) {
+.bottomnav a:not(.active) {
     display: none;
 }
-.topnav a {
+.bottomnav a {
     color: #ebebeb;
     padding: 0.8rem 1rem;
     text-decoration: none;
@@ -223,22 +224,22 @@ header {
     line-height: 1rem;
 }
 
-.topnav a:hover {
+.bottomnav a:hover {
     color: #fff;
     background-color: #252525;
 }
 
-.topnav a.active {
+.bottomnav a.active {
     color: #fff;
     background-color: #101010;
 }
 
-.topnav.responsive a {
+.bottomnav.responsive a {
     float: none;
     display: block;
     text-align: left;
 }
-.topnav.responsive li {
+.bottomnav.responsive li {
     display: block;
     text-align: left;
 }
@@ -280,11 +281,16 @@ button {
     footer span {
         font-size: initial;
     }
+
     button {
         display: block;
         float: left;
         padding: 5px 10px;
         margin: 5px;
+    }
+
+    .contents {
+        padding: 5px 18px;
     }
 }
 
@@ -312,18 +318,28 @@ button {
     .menuToggle {
         display: none;
     }
-    .topnav ul {
+
+    .bottomnav ul {
         left: 0;
         width: fit-content;
         margin: 0 auto;
     }
-    .topnav li {
+    .bottomnav li {
         float: left;
     }
-    .topnav a:not(.active) {
+    .bottomnav a:not(.active) {
         display: block;
     }
-    .topnav a.icon {
+    .bottomnav a.icon {
         display: none;
+    }
+
+    .contents {
+        padding: 5px 25px;
+    }
+
+    .rulesPageContents li {
+        padding: 0 0 0 10px;
+        margin: 0 0 0 10px;
     }
 }

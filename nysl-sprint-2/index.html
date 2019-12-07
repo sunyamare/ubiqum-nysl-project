@@ -28,7 +28,7 @@
 
         <section id="mainContents" class="homePageContents"></section>
 
-        <nav id="responsiveNav" class="topnav">
+        <nav id="responsiveNav" class="bottomnav">
             <div class="menuToggle">
                 <a
                     href="javascript:void(0);"
@@ -123,10 +123,10 @@
             /* responsive bottom navigation */
             function changeNavClass() {
                 var navigation = document.getElementById("responsiveNav");
-                if (navigation.className === "topnav") {
+                if (navigation.className === "bottomnav") {
                     navigation.className += " responsive";
                 } else {
-                    navigation.className = "topnav";
+                    navigation.className = "bottomnav";
                 }
             }
 
