@@ -213,13 +213,35 @@ header {
 .rulesPageContents .contents > ol > li {
     margin-bottom: 1.1rem;
 }
-
 .rulesPageContents ul.last {
     margin-bottom: 1.3rem;
 }
 
-.aboutPageContents .half {
+.aboutPageContents .gallery {
+    padding: 0;
+    max-width: 300px;
+}
+
+.w3-section {
+    margin-top: 16px;
+}
+.w3-col {
+    float: left;
     width: 100%;
+    padding: 0 8px;
+}
+.w3-col.s4 {
+    width: 24%;
+}
+.w3-opacity {
+    opacity: 0.6;
+}
+.w3-opacity:hover,
+.w3-opacity-off {
+    opacity: 1;
+}
+.aboutPageContents img.mySlides {
+    display: none;
 }
 
 /* AREA navigation */
@@ -379,9 +401,14 @@ button {
         padding: 0 0 0 10px;
         margin: 0 0 0 10px;
     }
-    .aboutPageContents .half {
+    .aboutPageContents .left {
         float: left;
-        width: 48%;
+        width: 67%;
+    }
+    .aboutPageContents .gallery {
+        padding: 10px 0 0 20px;
+        width: 30%;
+        float: left;
     }
 
     .bottomnav ul {

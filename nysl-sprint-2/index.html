@@ -15,14 +15,14 @@
             content="NYSL, Soccer, League, Northside, Youth"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="“robots“" content="“index, follow“ />
+        <meta name="robots" content="index, follow" />
         <link
             async
             rel="shortcut icon"
             type="image/png"
             href="img/favicon-16x16.png"
         />
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" lazyload />
         <title id="dynamicTitle">NYSL Home</title>
     </head>
     <body>
@@ -198,6 +198,34 @@
             function topFunction() {
                 document.body.scrollTop = 0;
                 document.documentElement.scrollTop = 0;
+            }
+
+            /* Gallery about us */
+            function currentDiv(n) {
+                showDivs((slideIndex = n));
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                if (n > x.length) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = x.length;
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(
+                        " w3-opacity-off",
+                        ""
+                    );
+                }
+                x[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " w3-opacity-off";
             }
         </script>
     </body>
