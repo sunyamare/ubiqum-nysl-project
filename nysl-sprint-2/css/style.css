@@ -74,11 +74,52 @@ ul ul {
 }
 
 /* AREA shared content */
+@keyframes backgroundSlider {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-5%);
+    }
+    20% {
+        transform: translateY(-12%);
+    }
+    30% {
+        transform: translateY(-20%);
+    }
+    40% {
+        transform: translateY(-30%);
+    }
+    50% {
+        transform: translateY(-50%);
+    }
+    60% {
+        transform: translateY(-70%);
+    }
+    70% {
+        transform: translateY(-60%);
+    }
+    80% {
+        transform: translateY(-40%);
+    }
+    90% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 header {
+    height: 250px;
+    overflow: hidden;
+}
+
+.background {
     background: url(../img/Youth-Soccer.jpg) top center no-repeat;
     background-size: cover;
-    height: 461px;
-    max-height: 250px;
+    height: 830px;
+    animation: backgroundSlider 15s linear infinite;
 }
 
 .pageTitle {
