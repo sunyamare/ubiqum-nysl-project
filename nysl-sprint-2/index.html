@@ -22,7 +22,13 @@
             type="image/png"
             href="img/favicon-16x16.png"
         />
-        <link rel="stylesheet" type="text/css" href="css/style.css" lazyload />
+        <!--<link rel="stylesheet" type="text/css" href="css/style.css"  />-->
+        <link
+            rel="preload"
+            href="css/style.css"
+            as="style"
+            onload="this.rel='stylesheet'"
+        />
         <title id="dynamicTitle">NYSL Home</title>
     </head>
     <body>
