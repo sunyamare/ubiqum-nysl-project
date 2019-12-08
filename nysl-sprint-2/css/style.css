@@ -222,14 +222,14 @@ header {
     max-width: 300px;
 }
 
-/* gallery styles copied from w3schools.com */
+/* gallery styles copied from w3schools.com css and adapted */
 .w3-section {
     margin-top: 16px;
 }
 .w3-col {
     float: left;
     width: 100%;
-    padding: 0 8px;
+    padding: 0 8px 0 0;
 }
 .w3-col.s4 {
     width: 24%;
