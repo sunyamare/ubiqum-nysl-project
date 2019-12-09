@@ -1,4 +1,13 @@
 /* AREA basics */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 body {
     margin: 0 auto;
     line-height: 1.6;
@@ -6,7 +15,7 @@ body {
     color: #444;
     font-weight: 400;
     font-family: "Raleway", sans-serif;
-    animation: fadein 0.1s;
+    animation: fadein 0.05s;
 }
 
 body::-webkit-scrollbar {
@@ -117,6 +126,11 @@ tr:nth-child(even) {
 }
 
 /* AREA shared content */
+header {
+    height: 250px;
+    overflow: hidden;
+}
+
 @keyframes backgroundSlider {
     0% {
         transform: translateY(0);
@@ -125,12 +139,6 @@ tr:nth-child(even) {
         transform: translateY(0%);
     }
 }
-
-header {
-    height: 250px;
-    overflow: hidden;
-}
-
 .background {
     background: url(../img/Youth-Soccer.jpg) top center no-repeat;
     background-size: cover;
@@ -180,19 +188,11 @@ header {
     max-width: 80px;
 }
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 .contents {
     overflow: hidden;
     padding: 5px 10px;
     margin-bottom: 72px;
-    animation: fadein 0.3s;
+    animation: fadein 0.1s;
 }
 
 /* AREA back to top button */

@@ -56,11 +56,11 @@
                 <li><a id="aboutLink" href="#about">About Us</a></li>
                 <li><a id="contactLink" href="#contact">Contact</a></li>
                 <li><a id="gameInfoLink" href="#gameInfo">Game Info</a></li>
-                <li>
+                <!--<li>
                     <a id="registrationLink" href="#registration"
                         >Registration</a
                     >
-                </li>
+                </li>-->
                 <li><a id="rulesLink" href="#rules">Rules</a></li>
             </ul>
         </nav>
@@ -127,9 +127,9 @@
 
             /* function to serve requested page (or home) */
             function serveRequestedPage() {
+                /* hide contents div before removing css */
+                $("#mainContents").addClass("hide");
                 $(document).ready(function() {
-                    /* hide contents div before removing css */
-                    $("#mainContents").addClass("hide");
                     $("#mainContents").removeClass(
                         getIDsClassNames("mainContents")
                     );
