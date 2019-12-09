@@ -55,6 +55,7 @@
                 <li><a id="homeLink" href="#home">Home</a></li>
                 <li><a id="aboutLink" href="#about">About Us</a></li>
                 <li><a id="contactLink" href="#contact">Contact</a></li>
+                <li><a id="gameInfoLink" href="#gameInfo">Game Info</a></li>
                 <li><a id="rulesLink" href="#rules">Rules</a></li>
             </ul>
         </nav>
@@ -129,6 +130,7 @@
                     $("#aboutLink").removeClass();
                     $("#contactLink").removeClass();
                     $("#homeLink").removeClass();
+                    $("#gameInfoLink").removeClass();
                     $("#rulesLink").removeClass();
                     $(`#${getHash()}Link`).addClass("active");
                 });
@@ -171,6 +173,9 @@
                 linkClickTasks();
             });
             $("#contactLink").click(function() {
+                linkClickTasks();
+            });
+            $("#gameInfoLink").click(function() {
                 linkClickTasks();
             });
             $("#rulesLink").click(function() {

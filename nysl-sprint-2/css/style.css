@@ -50,6 +50,26 @@ ul ul {
     list-style-type: circle;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+th,
+td {
+    text-align: left;
+    padding: 5px 5px 5px 0;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.tableDiv {
+    overflow-x: auto;
+}
+.marginTop {
+    margin-top: 1.3rem;
+}
+
 /* AREA Raleway font */
 @font-face {
     font-family: "Raleway";
@@ -70,9 +90,17 @@ ul ul {
 .centered {
     text-align: center;
 }
-
 .uppercase {
     text-transform: uppercase;
+}
+.underlined {
+    text-decoration: underline;
+}
+.italic {
+    font-style: italic;
+}
+.half {
+    width: 100%;
 }
 
 /* AREA shared content */
@@ -367,6 +395,12 @@ button {
 }
 
 @media only screen and (min-width: 800px) {
+    .half {
+        width: 50%;
+        float: left;
+        margin-top: -1rem;
+    }
+
     .banner h2 {
         font-size: 1.5rem;
     }
@@ -412,6 +446,12 @@ button {
         padding: 10px 0 0 20px;
         width: 30%;
         float: left;
+    }
+    .gameInfoPageContents .paddingLeft td:nth-child(1) {
+        padding-left: 2rem;
+    }
+    .gameInfoPageContents tr:nth-child(1) > th.minWidth {
+        min-width: 106px;
     }
 
     .bottomnav ul {
