@@ -6,6 +6,7 @@ body {
     color: #444;
     font-weight: 400;
     font-family: "Raleway", sans-serif;
+    animation: fadein 0.1s;
 }
 
 body::-webkit-scrollbar {
@@ -111,6 +112,9 @@ tr:nth-child(even) {
 .half {
     width: 100%;
 }
+.hide {
+    display: none;
+}
 
 /* AREA shared content */
 @keyframes backgroundSlider {
@@ -176,10 +180,19 @@ header {
     max-width: 80px;
 }
 
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .contents {
     overflow: hidden;
     padding: 5px 10px;
     margin-bottom: 72px;
+    animation: fadein 0.3s;
 }
 
 /* AREA back to top button */
@@ -273,12 +286,6 @@ header {
         flex-flow: row wrap;
         align-items: center;
     }
-}
-.registrationPageContents .show {
-    display: block;
-}
-.registrationPageContents .hide {
-    display: none;
 }
 
 /* gallery styles copied from w3schools.com css and adapted */

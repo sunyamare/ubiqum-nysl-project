@@ -8,7 +8,7 @@
     <h2>Registration Form</h2>
 </div>
 <div class="contents">
-    <div id="contactForm" class="show">
+    <div id="contactForm">
         <p>Register with the following form:</p>
         <form name="registrationForm">
             <span>Enter name:</span><input type="text" name="nm" /><br />
@@ -27,10 +27,8 @@
 <script>
     function changeClasses() {
         $(document).ready(function() {
-            $("#contactForm").removeClass();
             $("#contactForm").addClass("hide");
             $("#formOutput").removeClass();
-            $("#formOutput").addClass("show");
         });
     }
     function collect(form) {

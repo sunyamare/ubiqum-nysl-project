@@ -73,7 +73,9 @@
             <div class="site-notice">
                 <span>
                     Site notice: This is a demo page! Contact:
-                    <a href="https://sunyamare.ch/">sunyamare.ch</a>
+                    <a href="https://sunyamare.ch/" target="_blank"
+                        >sunyamare.ch</a
+                    >
                 </span>
             </div>
         </footer>
@@ -111,12 +113,29 @@
                 return pageName;
             }
 
+            /* function to show contents div */
+            function showContent() {
+                $(document).ready(function() {
+                    $("#mainContents").removeClass("hide");
+                });
+            }
+
+            /* function to get current ID's class names */
+            function getIDsClassNames(ID) {
+                return document.getElementById(ID).className;
+            }
+
             /* function to serve requested page (or home) */
             function serveRequestedPage() {
                 $(document).ready(function() {
-                    $("#mainContents").removeClass();
+                    /* hide contents div before removing css */
+                    $("#mainContents").addClass("hide");
+                    $("#mainContents").removeClass(
+                        getIDsClassNames("mainContents")
+                    );
                     $("#mainContents").addClass(generateClassName().substr(1));
                     $(generateClassName()).load(generatePageName());
+                    showContent();
                 });
             }
             serveRequestedPage(); // for the first page load
