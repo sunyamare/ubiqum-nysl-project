@@ -264,7 +264,6 @@ header {
 .registrationPageContents .registrationForm button:hover {
     background-color: royalblue;
 }
-
 @media only screen and (min-width: 800px) {
     .registrationPageContents .registrationForm input {
         margin: 5px 10px 5px 0;

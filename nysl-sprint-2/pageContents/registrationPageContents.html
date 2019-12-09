@@ -8,20 +8,21 @@
     <h2>Registration Form</h2>
 </div>
 <div class="contents">
-    <section>
-        <div id="contactForm">
-            <form name="myform">
-                Enter name: <input type="text" name="nm" /><br />
-                Enter age: <input type="text" name="ag" /><br />
-                <input
-                    type="button"
-                    value="Submit"
-                    onclick="changeClasses(); collect(this.form);"
-                />
-            </form>
-        </div>
-        <div id="formOutput"></div>
-    </section>
+    <div id="contactForm" class="show">
+        <p>Register with the following form:</p>
+        <form name="registrationForm">
+            <span>Enter name:</span><input type="text" name="nm" /><br />
+            Enter age: <input type="text" name="ag" /><br />
+            <input
+                type="button"
+                value="Submit"
+                onclick="changeClasses(); collect(this.form);"
+            />
+        </form>
+    </div>
+    <div id="formOutput" class="hide">
+        <p>The following data has been transmitted:</p>
+    </div>
 </div>
 <script>
     function changeClasses() {
@@ -32,9 +33,9 @@
             $("#formOutput").addClass("show");
         });
     }
-    function collect(frm) {
+    function collect(form) {
         document.getElementById("formOutput").innerHTML +=
-            "Name: " + frm.nm.value + "<br>Age: " + frm.ag.value + "<hr>";
-        frm.reset();
+            "Name: " + form.nm.value + "<br>Age: " + form.ag.value + "<hr>";
+        form.reset();
     }
 </script>
