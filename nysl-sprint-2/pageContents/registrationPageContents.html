@@ -8,5 +8,33 @@
     <h2>Registration Form</h2>
 </div>
 <div class="contents">
-    <p>helloo</p>
+    <section>
+        <div id="contactForm">
+            <form name="myform">
+                Enter name: <input type="text" name="nm" /><br />
+                Enter age: <input type="text" name="ag" /><br />
+                <input
+                    type="button"
+                    value="Submit"
+                    onclick="changeClasses(); collect(this.form);"
+                />
+            </form>
+        </div>
+        <div id="formOutput"></div>
+    </section>
 </div>
+<script>
+    function changeClasses() {
+        $(document).ready(function() {
+            $("#contactForm").removeClass();
+            $("#contactForm").addClass("hide");
+            $("#formOutput").removeClass();
+            $("#formOutput").addClass("show");
+        });
+    }
+    function collect(frm) {
+        document.getElementById("formOutput").innerHTML +=
+            "Name: " + frm.nm.value + "<br>Age: " + frm.ag.value + "<hr>";
+        frm.reset();
+    }
+</script>
