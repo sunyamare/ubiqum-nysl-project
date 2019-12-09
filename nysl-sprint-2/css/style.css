@@ -21,6 +21,15 @@ body::-webkit-scrollbar-thumb {
     outline: 1px solid slategrey;
 }
 
+a {
+    color: rgb(44, 78, 105);
+    font-weight: bold;
+}
+a:hover {
+    color: rgb(59, 104, 141);
+    text-decoration: underline;
+}
+
 h1,
 h2,
 h3 {
@@ -108,35 +117,8 @@ tr:nth-child(even) {
     0% {
         transform: translateY(0);
     }
-    10% {
-        transform: translateY(-5%);
-    }
-    20% {
-        transform: translateY(-10%);
-    }
-    30% {
-        transform: translateY(-15%);
-    }
-    40% {
-        transform: translateY(-40%);
-    }
-    50% {
-        transform: translateY(-60%);
-    }
-    60% {
-        transform: translateY(-70%);
-    }
-    70% {
-        transform: translateY(-60%);
-    }
-    80% {
-        transform: translateY(-35%);
-    }
-    90% {
-        transform: translateY(-10%);
-    }
     100% {
-        transform: translateY(0);
+        transform: translateY(0%);
     }
 }
 
@@ -148,8 +130,8 @@ header {
 .background {
     background: url(../img/Youth-Soccer.jpg) top center no-repeat;
     background-size: cover;
-    height: 835px;
-    animation: backgroundSlider 15s linear infinite;
+    height: 315px;
+    animation: backgroundSlider 2s linear forwards;
 }
 
 .pageTitle {
@@ -250,6 +232,11 @@ header {
 .aboutPageContents .gallery {
     padding: 0;
     max-width: 300px;
+}
+
+.contactPageContents img {
+    margin-top: 10px;
+    width: 100%;
 }
 
 /* gallery styles copied from w3schools.com css and adapted */
@@ -375,9 +362,27 @@ button {
     .pageTitle h1 {
         border-radius: 12px;
     }
+
+    @keyframes backgroundSlider {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-5%);
+        }
+    }
 }
 
 @media only screen and (min-width: 500px) {
+    @keyframes backgroundSlider {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-10%);
+        }
+    }
+
     footer span {
         font-size: initial;
     }
@@ -395,10 +400,18 @@ button {
 }
 
 @media only screen and (min-width: 800px) {
+    @keyframes backgroundSlider {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-15%);
+        }
+    }
+
     .half {
         width: 50%;
         float: left;
-        margin-top: -1rem;
     }
 
     .banner h2 {
@@ -407,7 +420,7 @@ button {
 
     .branding {
         position: absolute;
-        left: 10%;
+        left: 5%;
         top: 0;
         width: 90%;
     }
@@ -453,6 +466,13 @@ button {
     .gameInfoPageContents tr:nth-child(1) > th.minWidth {
         min-width: 106px;
     }
+    .gameInfoPageContents .half {
+        margin-top: -1rem;
+    }
+
+    .contactPageContents img {
+        margin-top: 20px;
+    }
 
     .bottomnav ul {
         left: 0;
@@ -470,5 +490,16 @@ button {
     }
     .menuToggle {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    @keyframes backgroundSlider {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(-20%);
+        }
     }
 }
