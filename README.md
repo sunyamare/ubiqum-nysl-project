@@ -7,6 +7,6 @@ https://vigorous-lamport-c17a5f.netlify.com/
 
 ## First day's work: 
 https://github.com/sunyamare/ubiqum-mern/tree/master/nysl-sprint-1/
-## NYSL project, first week:
+## NYSL project, two weeks:
 https://github.com/sunyamare/ubiqum-mern/tree/master/nysl-sprint-1-design/
 
