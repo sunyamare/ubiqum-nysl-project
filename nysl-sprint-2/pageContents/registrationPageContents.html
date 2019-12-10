@@ -11,8 +11,12 @@
     <div id="contactForm">
         <p>Register with the following form:</p>
         <form name="registrationForm">
-            <span>Enter name:</span><input type="text" name="nm" /><br />
-            Enter age: <input type="text" name="ag" /><br />
+            <label>Player's First Name: </label>
+            <input type="text" placeholder="..." name="firstName" />
+            <label>Last Name: </label>
+            <input type="text" placeholder="..." name="lastName" />
+            <input type="radio" name="gender" value="Female" /> Female
+            <input type="radio" name="gender" value="Male" /> Male
             <input
                 type="button"
                 value="Submit"
@@ -28,12 +32,35 @@
     function changeClasses() {
         $(document).ready(function() {
             $("#contactForm").addClass("hide");
-            $("#formOutput").removeClass();
+            $("#formOutput").removeClass("hide");
         });
     }
     function collect(form) {
         document.getElementById("formOutput").innerHTML +=
-            "Name: " + form.nm.value + "<br>Age: " + form.ag.value + "<hr>";
+            "<div class='tableDiv'>" +
+            "<table>" +
+            "<tr>" +
+            "<td>Player’s First Name: " +
+            "<td>" +
+            form.firstName.value +
+            "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>" +
+            "Last Name: " +
+            "</td>" +
+            "<td>1734 N. Orleans St., Chicago, IL 60614</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Howard A Yeager Elementary</td>" +
+            "<td>2245 N. Southport Ave., Chicago, IL 60614</td>" +
+            "</tr>" +
+            "</table>" +
+            "</div >" +
+            "<br />Last Name: " +
+            form.lastName.value +
+            "<br />Gender: " +
+            form.gender.value;
         form.reset();
     }
 </script>

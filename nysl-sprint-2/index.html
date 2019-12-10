@@ -40,7 +40,7 @@
             </div>
         </header>
 
-        <section id="mainContents" class="homePageContents"></section>
+        <section id="mainContents" class="hide homePageContents"></section>
 
         <nav id="responsiveNav" class="bottomnav">
             <div class="menuToggle">
@@ -116,27 +116,30 @@
             /* function to show contents div */
             function showContent() {
                 $(document).ready(function() {
-                    $("#mainContents").removeClass("hide");
+                    $("#mainContents").addClass("show");
+                    console.log("added class 'show'");
                 });
             }
 
             /* function to get current ID's class names */
-            function getIDsClassNames(ID) {
-                return document.getElementById(ID).className;
+            function getIDsClassName(ID) {
+                let classy = document.getElementById(ID).className;
+                return classy.slice(5);
             }
 
             /* function to serve requested page (or home) */
             function serveRequestedPage() {
                 /* hide contents div before removing css */
-                $("#mainContents").addClass("hide");
+                $("#mainContents").removeClass("show");
+                console.log("removed class 'show'");
                 $(document).ready(function() {
                     $("#mainContents").removeClass(
-                        getIDsClassNames("mainContents")
+                        getIDsClassName("mainContents")
                     );
                     $("#mainContents").addClass(generateClassName().substr(1));
                     $(generateClassName()).load(generatePageName());
-                    showContent();
                 });
+                console.log("served requested page");
             }
             serveRequestedPage(); // for the first page load
 
@@ -180,8 +183,9 @@
             }
 
             /* function with all the stuff that needs to be done on every link click */
-            function linkClickTasks() {
+            async function linkClickTasks() {
                 serveRequestedPage();
+                showContent();
                 setActiveMenuClass();
                 setTitle();
                 removeResponsiveNavClass();

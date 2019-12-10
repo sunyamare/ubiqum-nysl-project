@@ -114,6 +114,9 @@ tr:nth-child(even) {
 .hide {
     display: none;
 }
+.hide {
+    display: block;
+}
 
 /* AREA shared content */
 header {
