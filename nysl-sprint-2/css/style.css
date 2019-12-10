@@ -114,7 +114,7 @@ tr:nth-child(even) {
 .hide {
     display: none;
 }
-.hide {
+.show {
     display: block;
 }
 
@@ -244,40 +244,9 @@ header {
     width: 100%;
 }
 
+/* flexbox magic */
 .registrationPageContents .registrationForm {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-}
-.registrationPageContents .registrationForm label {
-    margin: 5px 10px 5px 0;
-}
-.registrationPageContents .registrationForm input {
-    vertical-align: middle;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-.registrationPageContents .registrationForm button {
-    padding: 10px 20px;
-    background-color: dodgerblue;
-    border: 1px solid #ddd;
-    color: white;
-    cursor: pointer;
-}
-.registrationPageContents .registrationForm button:hover {
-    background-color: royalblue;
-}
-@media only screen and (min-width: 800px) {
-    .registrationPageContents .registrationForm input {
-        margin: 5px 10px 5px 0;
-    }
-
-    .registrationPageContents .registrationForm {
-        flex-flow: row wrap;
-        align-items: center;
-    }
 }
 
 /* gallery styles copied from w3schools.com css and adapted */

@@ -12,7 +12,7 @@
         <p>Register with the following form:</p>
         <form name="registrationForm">
             <label>Player's First Name: </label>
-            <input type="text" field="Player's First Name: " name="firstName" />
+            <input type="text" name="firstName" />
             <label>Last Name: </label>
             <input type="text" name="lastName" />
             <input type="radio" name="gender" value="Female" /> Female
@@ -39,19 +39,28 @@
         document.getElementById("formOutput").innerHTML +=
             "<div class='tableDiv'>" +
             "<table>" +
-            /* */
             "<tr>" +
-            "<td>" +
-            form.firstName.field +
-            "</td>" +
+            "<td>Player’s First Name: " +
             "<td>" +
             form.firstName.value +
             "</td>" +
             "</tr>" +
-            /* */
+            "<tr>" +
+            "<td>" +
+            "Last Name: " +
+            "</td>" +
+            "<td>" +
+            form.lastName.value +
+            "</td>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>Gender: " +
+            "</td>" +
+            "<td>" +
+            form.gender.value +
+            "</tr>" +
             "</table>" +
             "</div >";
-
         form.reset();
     }
 </script>

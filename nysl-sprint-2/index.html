@@ -137,11 +137,14 @@
                         getIDsClassName("mainContents")
                     );
                     $("#mainContents").addClass(generateClassName().substr(1));
-                    $(generateClassName()).load(generatePageName());
+                    $(generateClassName()).load(generatePageName(), function() {
+                        showContent();
+                    });
                 });
                 console.log("served requested page");
             }
             serveRequestedPage(); // for the first page load
+            showContent(); // for the first page load
 
             /* function to set the correct title on page load */
             function setTitle() {
@@ -185,7 +188,6 @@
             /* function with all the stuff that needs to be done on every link click */
             async function linkClickTasks() {
                 serveRequestedPage();
-                showContent();
                 setActiveMenuClass();
                 setTitle();
                 removeResponsiveNavClass();
