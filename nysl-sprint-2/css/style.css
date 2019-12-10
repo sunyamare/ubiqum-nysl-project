@@ -245,8 +245,41 @@ header {
 }
 
 /* flexbox magic */
+.registrationPageContents {
+    line-height: 2.5rem;
+}
 .registrationPageContents .registrationForm {
+    margin-top: 15px;
+}
+.registrationPageContents .parent {
     display: flex;
+    flex-flow: row wrap;
+}
+.registrationPageContents .child {
+    flex-grow: 1;
+}
+.registrationPageContents label {
+    float: left;
+}
+.registrationPageContents span {
+    display: block;
+    overflow: hidden;
+    padding-right: 5px;
+}
+.registrationPageContents input[type="text"],
+.registrationPageContents input[type="email"],
+.registrationPageContents input[type="phone"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #444;
+    font-size: 18px;
+    color: #444;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
+    margin-left: 5px;
+}
+.registrationPageContents input[type="radio"] {
+    margin-left: 8px;
 }
 
 /* gallery styles copied from w3schools.com css and adapted */
@@ -482,6 +515,10 @@ button {
 
     .contactPageContents img {
         margin-top: 20px;
+    }
+
+    .registrationPageContents .gap {
+        padding-left: 10px;
     }
 
     .bottomnav ul {

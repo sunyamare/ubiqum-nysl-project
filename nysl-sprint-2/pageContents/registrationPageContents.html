@@ -9,14 +9,92 @@
 </div>
 <div class="contents">
     <div id="contactForm">
-        <p>Register with the following form:</p>
-        <form name="registrationForm">
-            <label>Player's First Name: </label>
-            <input type="text" field="Player's First Name: " name="firstName" />
-            <label>Last Name: </label>
-            <input type="text" name="lastName" />
-            <input type="radio" name="gender" value="Female" /> Female
-            <input type="radio" name="gender" value="Male" /> Male
+        <form class="registrationForm">
+            <div class="parent">
+                <div class="child">
+                    <label>Player's First Name: </label>
+                    <span><input type="text" name="firstName"/></span>
+                </div>
+                <div class="child gap">
+                    <label>Last Name: </label>
+                    <span><input type="text" name="lastName"/></span>
+                </div>
+            </div>
+
+            <div class="parent">
+                <div class="child">
+                    <label>Street Address: </label>
+                    <span><input type="text" name="streetAddress"/></span>
+                </div>
+            </div>
+
+            <div class="parent">
+                <div class="child">
+                    <label>City: </label>
+                    <span><input type="text" name="city"/></span>
+                </div>
+                <div class="child gap">
+                    <label>Zip Code: </label>
+                    <span><input type="text" name="zipCode"/></span>
+                </div>
+            </div>
+
+            <div class="parent">
+                <div class="child">
+                    <label>Birth Date (mm/dd/yyyy): </label>
+                    <span><input type="text" name="birthDate"/></span>
+                </div>
+                <div class="child gap">
+                    <span
+                        >Gender:<input
+                            type="radio"
+                            name="gender"
+                            value="Female"
+                        />
+                        Female<input type="radio" name="gender" value="Male" />
+                        Male</span
+                    >
+                </div>
+            </div>
+
+            <div class="parent">
+                <div class="child">
+                    <span
+                        >Grade:
+                        <input type="radio" name="grade" value="Pre-School" />
+                        Pre-School
+                        <input type="radio" name="grade" value="1st" />
+                        1st
+                        <input type="radio" name="grade" value="2nd" />
+                        2nd
+                        <input type="radio" name="grade" value="3rd" />
+                        3rd
+                        <input type="radio" name="grade" value="4th" />
+                        4th
+                        <input type="radio" name="grade" value="5th" />
+                        5th
+                    </span>
+                </div>
+            </div>
+
+            <div class="parent">
+                <div class="child">
+                    <label>Parent/Guardian: </label>
+                    <span><input type="text" name="parentGuardian"/></span>
+                </div>
+            </div>
+
+            <div class="parent">
+                <div class="child">
+                    <label>Contact Phone: </label>
+                    <span><input type="phone" name="contactPhone"/></span>
+                </div>
+                <div class="child gap">
+                    <label>Contact Email: </label>
+                    <span><input type="email" name="contactEmail"/></span>
+                </div>
+            </div>
+
             <input
                 type="button"
                 value="Submit"
@@ -25,7 +103,7 @@
         </form>
     </div>
     <div id="formOutput" class="hide">
-        <p>The following data has been transmitted:</p>
+        <h3>The following data has been transmitted:</h3>
     </div>
 </div>
 <script>
@@ -39,19 +117,54 @@
         document.getElementById("formOutput").innerHTML +=
             "<div class='tableDiv'>" +
             "<table>" +
-            /* */
-            "<tr>" +
-            "<td>" +
-            form.firstName.field +
-            "</td>" +
-            "<td>" +
+            /* begin form data */
+            /**/
+            "<tr><td>Player's First Name: </td><td>" +
             form.firstName.value +
-            "</td>" +
-            "</tr>" +
-            /* */
+            "</td></tr>" +
+            /**/
+            "<tr><td>Last Name: </td><td>" +
+            form.lastName.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Street Address: </td><td>" +
+            form.streetAddress.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>City: </td><td>" +
+            form.city.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Zip Code: </td><td>" +
+            form.zipCode.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Birth Date: </td><td>" +
+            form.birthDate.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Gender: </td><td>" +
+            form.gender.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Grade: </td><td>" +
+            form.grade.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Parent/Guardian: </td><td>" +
+            form.parentGuardian.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Contact Phone: </td><td>" +
+            form.contactPhone.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Contact Email: </td><td>" +
+            form.contactEmail.value +
+            "</td></tr>" +
+            /* end form data */
             "</table>" +
             "</div >";
-
         form.reset();
     }
 </script>
