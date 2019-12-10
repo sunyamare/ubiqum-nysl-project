@@ -209,6 +209,139 @@
                 </div>
             </div>
 
+            <div class="parent checkboxes">
+                <div class="child">
+                    <input type="checkbox" name="hasUniform" value="checked" />
+                    Already Have a Uniform
+                </div>
+            </div>
+
+            <div class="ultraParent">
+                <h3>
+                    Jersey Size:
+                </h3>
+                <div class="parent checkboxes">
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="jerseySize"
+                            value="Youth Small"
+                        />
+                        Youth Small
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="jerseySize"
+                            value="Youth Medium"
+                        />
+                        Youth Medium
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="jerseySize"
+                            value="Youth Large"
+                        />
+                        Youth Large
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="jerseySize"
+                            value="Small"
+                        />
+                        Small
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="jerseySize"
+                            value="Medium"
+                        />
+                        Medium
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="jerseySize"
+                            value="Large"
+                        />
+                        Large
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="jerseySize"
+                            value="Extra-Large"
+                        />
+                        Extra-Large
+                    </div>
+                </div>
+
+                <h3>
+                    Shorts Size:
+                </h3>
+                <div class="parent checkboxes">
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="shortsSize"
+                            value="Youth Small"
+                        />
+                        Youth Small
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="shortsSize"
+                            value="Youth Medium"
+                        />
+                        Youth Medium
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="shortsSize"
+                            value="Youth Large"
+                        />
+                        Youth Large
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="shortsSize"
+                            value="Small"
+                        />
+                        Small
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="shortsSize"
+                            value="Medium"
+                        />
+                        Medium
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="shortsSize"
+                            value="Large"
+                        />
+                        Large
+                    </div>
+                    <div class="child">
+                        <input
+                            type="checkbox"
+                            name="shortsSize"
+                            value="Extra-Large"
+                        />
+                        Extra-Large
+                    </div>
+                </div>
+            </div>
+
             <input
                 type="button"
                 value="Submit"
@@ -299,6 +432,18 @@
             /**/
             "<tr><td>Wish Position: </td><td>" +
             arrayToText("wishPosition") +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Already Has a Uniform: </td><td>" +
+            form.hasUniform.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Wish Position: </td><td>" +
+            arrayToText("jerseySize") +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Wish Position: </td><td>" +
+            arrayToText("shortsSize") +
             "</td></tr>" +
             /* end form data */
             "</table>" +

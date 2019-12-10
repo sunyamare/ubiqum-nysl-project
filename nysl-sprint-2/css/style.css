@@ -254,6 +254,10 @@ header {
 .registrationPageContents .tableDiv {
     padding-bottom: 20px;
 }
+.registrationPageContents .ultraParent {
+    display: flex;
+    flex-flow: row;
+}
 .registrationPageContents .parent {
     display: flex;
     flex-flow: row wrap;
@@ -267,7 +271,7 @@ header {
 .registrationPageContents span {
     display: block;
     overflow: hidden;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 .registrationPageContents input[type="text"],
 .registrationPageContents input[type="email"],
