@@ -117,7 +117,7 @@
             function showContent() {
                 $(document).ready(function() {
                     $("#mainContents").addClass("show");
-                    console.log("added class 'show'");
+                    // console.log("added class 'show'");
                 });
             }
 
@@ -131,7 +131,7 @@
             function serveRequestedPage() {
                 /* hide contents div before removing css */
                 $("#mainContents").removeClass("show");
-                console.log("removed class 'show'");
+                // console.log("removed class 'show'");
                 $(document).ready(function() {
                     $("#mainContents").removeClass(
                         getIDsClassName("mainContents")
@@ -141,10 +141,9 @@
                         showContent();
                     });
                 });
-                console.log("served requested page");
+                // console.log("served requested page");
             }
             serveRequestedPage(); // for the first page load
-            showContent(); // for the first page load
 
             /* function to set the correct title on page load */
             function setTitle() {

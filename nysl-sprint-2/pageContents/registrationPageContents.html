@@ -95,6 +95,120 @@
                 </div>
             </div>
 
+            <h3>Which elementary schools do you live near?</h3>
+            <div class="parent">
+                <div class="child">
+                    <select name="firstClosestSchool">
+                        <option value="AJ Katzenmaier" selected
+                            >AJ Katzenmaier</option
+                        >
+                        <option value="Marjorie P Hart">Marjorie P Hart</option>
+                        <option value="Greenbay">Greenbay</option>
+                        <option value="North Elementary"
+                            >North Elementary</option
+                        >
+                        <option value="Howard A Yeager">Howard A Yeager</option>
+                        <option value="South Elementary"
+                            >South Elementary</option
+                        >
+                    </select>
+                </div>
+                <div class="child">
+                    <select name="secondClosestSchool">
+                        <option value="AJ Katzenmaier">AJ Katzenmaier</option>
+                        <option value="Marjorie P Hart" selected
+                            >Marjorie P Hart</option
+                        >
+                        <option value="Greenbay">Greenbay</option>
+                        <option value="North Elementary"
+                            >North Elementary</option
+                        >
+                        <option value="Howard A Yeager">Howard A Yeager</option>
+                        <option value="South Elementary"
+                            >South Elementary</option
+                        >
+                    </select>
+                </div>
+            </div>
+
+            <h3>
+                What position(s) do you normally play?
+                <span>(check all that apply)</span>
+            </h3>
+            <div class="parent checkboxes">
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="normalPosition"
+                        value="Forward"
+                    />
+                    Forward
+                </div>
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="normalPosition"
+                        value="Midfield"
+                    />
+                    Midfield
+                </div>
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="normalPosition"
+                        value="Defense"
+                    />
+                    Defense
+                </div>
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="normalPosition"
+                        value="Goalkeeper"
+                    />
+                    Goalkeeper
+                </div>
+            </div>
+
+            <h3>
+                What position(s) do you want to play?
+                <span>(check all that apply)</span>
+            </h3>
+            <div class="parent checkboxes">
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="wishPosition"
+                        value="Forward"
+                    />
+                    Forward
+                </div>
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="wishPosition"
+                        value="Midfield"
+                    />
+                    Midfield
+                </div>
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="wishPosition"
+                        value="Defense"
+                    />
+                    Defense
+                </div>
+                <div class="child">
+                    <input
+                        type="checkbox"
+                        name="wishPosition"
+                        value="Goalkeeper"
+                    />
+                    Goalkeeper
+                </div>
+            </div>
+
             <input
                 type="button"
                 value="Submit"
@@ -102,6 +216,7 @@
             />
         </form>
     </div>
+
     <div id="formOutput" class="hide">
         <h3>The following data has been transmitted:</h3>
     </div>
@@ -112,6 +227,13 @@
             $("#contactForm").addClass("hide");
             $("#formOutput").removeClass("hide");
         });
+    }
+    function arrayToText(name) {
+        var array = [];
+        $.each($(`input[name='${name}']:checked`), function() {
+            array.push($(this).val());
+        });
+        return array.join(", ");
     }
     function collect(form) {
         document.getElementById("formOutput").innerHTML +=
@@ -161,6 +283,22 @@
             /**/
             "<tr><td>Contact Email: </td><td>" +
             form.contactEmail.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>First Closest School: </td><td>" +
+            form.firstClosestSchool.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Second Closest School: </td><td>" +
+            form.secondClosestSchool.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Normally Played Position: </td><td>" +
+            arrayToText("normalPosition") +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Wish Position: </td><td>" +
+            arrayToText("wishPosition") +
             "</td></tr>" +
             /* end form data */
             "</table>" +

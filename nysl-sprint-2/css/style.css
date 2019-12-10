@@ -251,6 +251,9 @@ header {
 .registrationPageContents .registrationForm {
     margin-top: 15px;
 }
+.registrationPageContents .tableDiv {
+    padding-bottom: 20px;
+}
 .registrationPageContents .parent {
     display: flex;
     flex-flow: row wrap;
@@ -280,6 +283,40 @@ header {
 }
 .registrationPageContents input[type="radio"] {
     margin-left: 8px;
+}
+.registrationPageContents select {
+    width: 98%;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    color: #444;
+}
+.registrationPageContents input[type="button"] {
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    color: #444;
+    background-color: #e8e8e8;
+    border: 1px dotted #444;
+    padding: 11px 45px;
+    text-decoration: none;
+    margin: 8px 0px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.registrationPageContents h3 > span {
+    font-weight: 400;
+    display: inline;
+}
+.registrationPageContents .parent.checkboxes {
+    justify-content: flex-start;
+}
+.registrationPageContents .parent.checkboxes .child {
+    flex-grow: 0;
+    padding-right: 10px;
+}
+.registrationPageContents input[type="checkbox"] {
+    height: 14px;
 }
 
 /* gallery styles copied from w3schools.com css and adapted */
