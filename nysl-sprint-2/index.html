@@ -17,7 +17,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <link
-            async
             rel="shortcut icon"
             type="image/png"
             href="img/favicon-16x16.png"
@@ -80,7 +79,7 @@
             </div>
         </footer>
 
-        <script src="js/jquery.min.js" ;></script>
+        <script src="js/jquery.min.js"></script>
         <script>
             /* function to lowercase the first letter of a string */
             function capitalize(word) {
@@ -185,7 +184,7 @@
             }
 
             /* function with all the stuff that needs to be done on every link click */
-            async function linkClickTasks() {
+            function linkClickTasks() {
                 serveRequestedPage();
                 setActiveMenuClass();
                 setTitle();
