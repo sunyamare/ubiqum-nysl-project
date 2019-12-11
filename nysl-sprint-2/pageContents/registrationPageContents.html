@@ -42,7 +42,7 @@
             <div class="parent">
                 <div class="child">
                     <label>Birth Date (mm/dd/yyyy): </label>
-                    <span><input type="text" name="birthDate"/></span>
+                    <span><input type="date" name="birthDate"/></span>
                 </div>
                 <div class="child gap">
                     <span
@@ -87,7 +87,7 @@
             <div class="parent">
                 <div class="child">
                     <label>Contact Phone: </label>
-                    <span><input type="phone" name="contactPhone"/></span>
+                    <span><input type="tel" name="contactPhone"/></span>
                 </div>
                 <div class="child gap">
                     <label>Contact Email: </label>
@@ -211,16 +211,22 @@
 
             <div class="parent checkboxes">
                 <div class="child">
-                    <input type="checkbox" name="hasUniform" value="checked" />
-                    Already Have a Uniform
+                    <h3>
+                        <input
+                            type="checkbox"
+                            name="hasUniform"
+                            value="checked"
+                        />
+                        Already Have a Uniform
+                    </h3>
                 </div>
             </div>
 
-            <div class="ultraParent">
+            <div class="half">
                 <h3>
                     Jersey Size:
                 </h3>
-                <div class="parent checkboxes">
+                <div class="parent checkboxes parent_special">
                     <div class="child">
                         <input
                             type="checkbox"
@@ -278,11 +284,13 @@
                         Extra-Large
                     </div>
                 </div>
+            </div>
 
+            <div class="half">
                 <h3>
                     Shorts Size:
                 </h3>
-                <div class="parent checkboxes">
+                <div class="parent checkboxes parent_special">
                     <div class="child">
                         <input
                             type="checkbox"
@@ -342,11 +350,54 @@
                 </div>
             </div>
 
-            <input
-                type="button"
-                value="Submit"
-                onclick="changeClasses(); collect(this.form);"
-            />
+            <div class="consent full">
+                <h3 class="underlined">Permission to Play</h3>
+                <p>
+                    I, the parent or guardian of the minor registrant, agree
+                    that the registrant and I will abide by all the rules of the
+                    Northside Youth Soccer League (NYSL). In recognizing the
+                    possibility of physical injury associated with soccer and in
+                    consideration for the “League” accepting the registrant for
+                    its soccer programs and activities, I hereby release,
+                    discharge, and/or otherwise indemnify NYSL, their employees
+                    and associated personnel and volunteers, including the
+                    facilities used for practices and games, against any claim
+                    by or on behalf of the registrant as a result of the
+                    registrant’s participation in the program and/or being
+                    transported to or from NYSL sponsored activities, which
+                    transportation.
+                </p>
+                <p>
+                    By signing below, I hereby agree and authorize the above. In
+                    addition, by signing below, I also acknowledge that I have
+                    read the cancellation policy and agree to its terms.
+                </p>
+
+                <div class="parent">
+                    <div class="child">
+                        <p>
+                            <label>Parent/Guardian Signature: </label>
+                            <span
+                                ><input type="text" name="parentSignature"
+                            /></span>
+                        </p>
+                    </div>
+                    <div class="child gap">
+                        <p>
+                            <label>Date: </label>
+                            <span><input type="date" name="date"/></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <input
+                    type="button"
+                    value="Submit"
+                    onclick="changeClasses(); collect(this.form);"
+                />
+            </div>
         </form>
     </div>
 
@@ -444,6 +495,14 @@
             /**/
             "<tr><td>Wish Position: </td><td>" +
             arrayToText("shortsSize") +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Parent/Guardian Signature of: </td><td>" +
+            form.parentSignature.value +
+            "</td></tr>" +
+            /**/
+            "<tr><td>Signature Date: </td><td>" +
+            form.date.value +
             "</td></tr>" +
             /* end form data */
             "</table>" +

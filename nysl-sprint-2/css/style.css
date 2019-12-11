@@ -108,6 +108,10 @@ tr:nth-child(even) {
 .italic {
     font-style: italic;
 }
+.full {
+    width: 100%;
+    clear: both;
+}
 .half {
     width: 100%;
 }
@@ -254,10 +258,6 @@ header {
 .registrationPageContents .tableDiv {
     padding-bottom: 20px;
 }
-.registrationPageContents .ultraParent {
-    display: flex;
-    flex-flow: row;
-}
 .registrationPageContents .parent {
     display: flex;
     flex-flow: row wrap;
@@ -275,7 +275,8 @@ header {
 }
 .registrationPageContents input[type="text"],
 .registrationPageContents input[type="email"],
-.registrationPageContents input[type="phone"] {
+.registrationPageContents input[type="tel"],
+.registrationPageContents input[type="date"] {
     width: 100%;
     border: none;
     border-bottom: 1px solid #444;
@@ -321,6 +322,25 @@ header {
 }
 .registrationPageContents input[type="checkbox"] {
     height: 14px;
+}
+.registrationPageContents .parent_special {
+    display: flex;
+    flex-direction: column;
+    height: 145px;
+}
+.registrationPageContents .parent_special .child {
+    width: 48%;
+    float: left;
+    height: 35px;
+}
+.registrationPageContents .consent h3 {
+    padding-top: 10px;
+}
+.registrationPageContents .consent p {
+    line-height: 1.6rem;
+    margin-top: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 1rem;
 }
 
 /* gallery styles copied from w3schools.com css and adapted */
