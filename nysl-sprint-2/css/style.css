@@ -369,6 +369,10 @@ header {
     margin-top: 0.2em;
     margin-bottom: 0.4em;
 }
+.registrationPageContents .radio label,
+.registrationPageContents .checkboxes label {
+    float: none;
+}
 
 /* gallery styles copied from w3schools.com css and adapted */
 .w3-section {
@@ -603,11 +607,6 @@ button {
 
     .contactPageContents img {
         margin-top: 20px;
-    }
-
-    .registrationPageContents .radio label,
-    .registrationPageContents .checkboxes label {
-        float: none;
     }
 
     .bottomnav ul {
