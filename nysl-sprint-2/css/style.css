@@ -315,7 +315,6 @@ header {
     margin: 0 5px 0 5px;
 }
 .registrationPageContents input[type="radio"] {
-    margin-left: 8px;
     height: 15px;
 }
 .registrationPageContents select {
