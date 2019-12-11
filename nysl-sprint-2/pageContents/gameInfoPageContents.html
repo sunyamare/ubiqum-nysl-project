@@ -165,9 +165,12 @@
     </div>
 
     <div class="tableDiv">
-        <br />
         <table>
-            <strong>Game Locations:</strong>
+            <tr>
+                <th>
+                    Game Locations:
+                </th>
+            </tr>
             <tr>
                 <td>AJ Katzenmaier Elementary</td>
                 <td>24 W. Walton St., Chicago, IL 60610</td>
@@ -194,6 +197,89 @@
             </tr>
         </table>
 
+        <h2>Maps</h2>
+        <p>Click on the Location Name to display the map:</p>
+
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'AJ Katzenmaier')">
+                AJ Katzenmaier
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Greenbay')">
+                Greenbay
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Howard')">
+                Howard A Yeager
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'Marjorie')">
+                Marjorie P Hart
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'North')">
+                North
+            </button>
+            <button class="tablinks" onclick="openTab(event, 'South')">
+                South
+            </button>
+        </div>
+
+        <div id="AJ Katzenmaier" class="tabcontent">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6540604261354!2d-87.6312390854276!3d41.900296372005315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20USA!5e0!3m2!1sen!2sde!4v1576059322375!5m2!1sen!2sde"
+                width="100%"
+                height="450"
+                frameborder="0"
+                style="border:0;filter:grayscale(50%)"
+            ></iframe>
+        </div>
+        <div id="Greenbay" class="tabcontent">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.025698674511!2d-87.64002798542703!3d41.91380627115949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20USA!5e0!3m2!1sen!2sde!4v1576060031481!5m2!1sen!2sde"
+                width="100%"
+                height="450"
+                frameborder="0"
+                style="border:0;filter:grayscale(50%)"
+            ></iframe>
+        </div>
+
+        <div id="Howard" class="tabcontent">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5854973846476!2d-87.66511458542665!3d41.92326857056694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20USA!5e0!3m2!1sen!2sde!4v1576060075971!5m2!1sen!2sde"
+                width="100%"
+                height="450"
+                frameborder="0"
+                style="border:0;filter:grayscale(50%)"
+            ></iframe>
+        </div>
+
+        <div id="Marjorie" class="tabcontent">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.29172895305!2d-87.64808628542643!3d41.929582270171515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20USA!5e0!3m2!1sen!2sde!4v1576060093320!5m2!1sen!2sde"
+                width="100%"
+                height="450"
+                frameborder="0"
+                style="border:0;filter:grayscale(50%)"
+            ></iframe>
+        </div>
+
+        <div id="North" class="tabcontent">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.337553694941!2d-87.6483769854273!3d41.90710177157937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af0e6ccc3%3A0x26c81c1d557667da!2s1409%20N%20Ogden%20Ave%2C%20Chicago%2C%20IL%2060610%2C%20USA!5e0!3m2!1sen!2sde!4v1576060114253!5m2!1sen!2sde"
+                width="100%"
+                height="450"
+                frameborder="0"
+                style="border:0;filter:grayscale(50%)"
+            ></iframe>
+        </div>
+
+        <div id="South" class="tabcontent">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.747764826538!2d-87.65355538542681!3d41.91978077078531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101%20N%20Fremont%20St%2C%20Chicago%2C%20IL%2060614%2C%20USA!5e0!3m2!1sen!2sde!4v1576060133175!5m2!1sen!2sde"
+                width="100%"
+                height="450"
+                frameborder="0"
+                style="border:0;filter:grayscale(50%)"
+            ></iframe>
+        </div>
+
         <br />
     </div>
 
@@ -219,3 +305,21 @@
         </p>
     </div>
 </div>
+<script>
+    function openTab(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(
+                " active",
+                ""
+            );
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
