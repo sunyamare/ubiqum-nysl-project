@@ -312,10 +312,11 @@ header {
     color: #444;
     font-weight: 400;
     font-family: "Raleway", sans-serif;
-    margin-left: 5px;
+    margin: 0 5px 0 5px;
 }
 .registrationPageContents input[type="radio"] {
     margin-left: 8px;
+    height: 15px;
 }
 .registrationPageContents select {
     width: 98%;
@@ -605,8 +606,9 @@ button {
         margin-top: 20px;
     }
 
-    .registrationPageContents .gap {
-        padding-left: 10px;
+    .registrationPageContents .radio label,
+    .registrationPageContents .checkboxes label {
+        float: none;
     }
 
     .bottomnav ul {
